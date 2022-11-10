@@ -11,22 +11,22 @@ import kotlinx.coroutines.launch
 class SlideshowViewModel (application: Application)
     : AndroidViewModel(application){
 
-    val getAllData: MutableLiveData<List<rtc>>
+    val getAllData: MutableLiveData<List<rtcHome>>
     private val repository: rtcRepository = rtcRepository(rtcDao())
     init{
         getAllData = repository.getAllData
     }
 
     //Implementamos las funciones CRUD
-    fun addrtc(rtc: rtc) {
+    fun addrtc(rtc: rtcHome) {
         viewModelScope.launch (Dispatchers.IO) { repository.addrtc(rtc) }
     }
 
-    fun updatertc(rtc: rtc) {
+    fun updatertc(rtc: rtcHome) {
         viewModelScope.launch (Dispatchers.IO) { repository.updatertc(rtc) }
     }
 
-    fun deletertc(rtc: rtc) {
+    fun deletertc(rtc: rtcHome) {
         viewModelScope.launch (Dispatchers.IO) { repository.deletertc(rtc) }
     }
 }

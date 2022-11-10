@@ -3,15 +3,13 @@ package com.rtc.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rtc.databinding.RtcFilaBinding
 import com.rtc.model.rtcHome
-import com.rtc.ui.slideshow.SlideshowFragmentDirections
 
 
-class rtcAdapter: RecyclerView.Adapter<rtcAdapter.HomeViewHolder>() {
+class RtcAdapter: RecyclerView.Adapter<RtcAdapter.HomeViewHolder>() {
 
     //Se define la lista que se usa para mostrar la información en el recycler
     private var listaRTC = emptyList<rtcHome>()

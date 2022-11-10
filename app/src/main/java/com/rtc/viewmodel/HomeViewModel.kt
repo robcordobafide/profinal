@@ -8,7 +8,7 @@ import com.rtc.repository.rtcRepository
 
 class HomeViewModel (application : Application) : AndroidViewModel(application)  {
 
-    val getAllData: MutableLiveData<List<rtc>>
+    val getAllData: MutableLiveData<List<rtcHome>>
 
     private val repository: rtcRepository = rtcRepository(rtcDao())
 
@@ -17,15 +17,15 @@ class HomeViewModel (application : Application) : AndroidViewModel(application) 
     }
 
     //Implementamos las funciones CRUD
-    fun addrtc(rtc: rtc) {
+    fun addrtc(rtc: rtcHome) {
         repository.addrtc(rtc)
     }
 
-    fun updatertc(rtc: rtc) {
+    fun updatertc(rtc: rtcHome) {
         repository.updatertc(rtc)
     }
 
-    fun deletertc(rtc: rtc) {
+    fun deletertc(rtc: rtcHome) {
        repository.deletertc(rtc)
     }
 }

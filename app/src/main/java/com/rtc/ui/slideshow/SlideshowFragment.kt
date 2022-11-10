@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rtc.R
-import com.rtc.adapter.rtcAdapter
+import com.rtc.adapter.RtcAdapter
 import com.rtc.databinding.FragmentSlideshowBinding
 
 class SlideshowFragment : Fragment() {
@@ -33,7 +33,7 @@ class SlideshowFragment : Fragment() {
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
 
         //Activamos el adapter para ver la info..
-        val rtcAdapter = rtcAdapter()
+        val rtcAdapter = RtcAdapter()
 
         //Activamos el recyclerView (el reciclador)
         val reciclador = binding.reciclador
@@ -46,7 +46,7 @@ class SlideshowFragment : Fragment() {
 
         slideshowViewModel.getAllData.observe(
             viewLifecycleOwner,{
-                    rtc -> rtcAdapter.setData(rtc)
+                  //  rtc -> rtcAdapter.setData(rtc)
             }
         )
 
