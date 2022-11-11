@@ -3,10 +3,12 @@ package com.rtc.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rtc.databinding.RtcFilaBinding
 import com.rtc.model.rtcHome
+import com.rtc.ui.slideshow.SlideshowFragmentDirections
 
 
 class RtcAdapter: RecyclerView.Adapter<RtcAdapter.HomeViewHolder>() {
@@ -60,10 +62,10 @@ class RtcAdapter: RecyclerView.Adapter<RtcAdapter.HomeViewHolder>() {
 
             itemBinding.vistaFila.setOnClickListener {
                 //Genero la acción de pasarse al update con el objeto ...
-             //   val action = SlideshowFragmentDirections
-               //     .actionNavSlideshowToVisualizarFragment(rtcHome)
+               val action = SlideshowFragmentDirections
+                    .actionNavSlideshowToVisualizarFragment(rtc)
                 //Efectivamente se pasa...
-              //  itemView.findNavController().navigate(action)
+                itemView.findNavController().navigate(action)
             }
         }
 
