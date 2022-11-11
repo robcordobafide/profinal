@@ -2,7 +2,7 @@
     <string name="app_name">RTC SOLUTIONS</string>
     <string name="iniciemos">¡Iniciemos!</string>
     <string name="continuarGoogle">Continuar con Google</string>
-    <string name="slogan">TU HOGAR SIEMPRE  ESTARÁ  LIMPIO.</string>
+    <string name="slogan">Soluciones tecnológicas para todos!</string>
     <string name="slogan2">Contacta a nuestros socios para que tus espacios estén  impecables.</string>
     <string name="continuarCorreo">Acceder con Correo</string>
     <string name="bienvenida">¡Bienvenido de Vuelta!</string>
@@ -51,7 +51,7 @@
     <string name="msg_enviar_mensaje">Enviar mensaje por whatsapp</string>
     <string name="msg_llamar">Llamar a la persona</string>
     <string name="msg_datos">No hay numero telefonico</string>
-    <string name="msg_saludos">¡Hola ví tu anuncio en rtc! Me gustaría contratar tu servicio…</string>
+    <string name="msg_saludos">¡Hola ví tu anuncio en RTC! Me gustaría contratar tu servicio…</string>
     <string name="todo">Icono del app</string>
     <string name="msg_subiendo_registro">Subiendo datos</string>
 
