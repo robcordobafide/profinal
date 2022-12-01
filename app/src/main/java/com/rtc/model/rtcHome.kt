@@ -12,8 +12,8 @@ data class rtcHome(
     val telefono: String,
     val servicios: String,
     val experiencia: String,
-    val precio: String,
-    val rutaImagen: String?
+    val precio: String
+  //  val rutaImagen: String?
 ): Parcelable{
-    constructor(): this("","","","","","","","","")
+    constructor(): this("","","","","","","","")
 }

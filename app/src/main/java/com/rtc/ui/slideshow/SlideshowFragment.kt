@@ -46,7 +46,7 @@ class SlideshowFragment : Fragment() {
 
         slideshowViewModel.getAllData.observe(
             viewLifecycleOwner,{
-                  //  rtc -> rtcAdapter.setData(rtc)
+                    rtc -> rtcAdapter.setData(rtc)
             }
         )
 

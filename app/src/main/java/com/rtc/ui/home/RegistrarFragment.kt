@@ -59,13 +59,13 @@ class RegistrarFragment : Fragment() {
                 binding.progressBar.visibility = ProgressBar.VISIBLE
                 binding.msgMensaje.text = getString(R.string.msg_subiendo_registro)
                 binding.msgMensaje.visibility = TextView.VISIBLE
-                subeImagen()
+                //subeImagen()
             } else {
                 Toast.makeText(
                     requireContext(), getString(R.string.msgFaltanDatos), Toast.LENGTH_SHORT
                 ).show()
             }
-            //agregarServicios()
+            agregarServicios()
         }
 
 
@@ -85,33 +85,9 @@ class RegistrarFragment : Fragment() {
  return binding.root
 
 }
-private fun subeImagen(){
-    val imagenFile = imagenUtiles.imagenFile
 
-    //Si se puede usar el archivo de la foto
-    if (imagenFile.exists() && imagenFile.isFile && imagenFile.canRead()) {
-        val ruta = Uri.fromFile(imagenFile)
-        val referencia: StorageReference =
-            Firebase.storage.reference.child(
-                "rtcApp/${Firebase.auth.currentUser?.uid}/imagenes/${imagenFile.name}"
-            )
-        referencia.putFile(ruta)
-            .addOnSuccessListener {
-                val downLoadUrl = referencia.downloadUrl
-                downLoadUrl.addOnSuccessListener {
-                    val rutaImagen = it.toString()  //ruta donde quedó la nota de audio...
-                    agregarServicios(rutaImagen)  //Ahora se sube la imagen
-                }
-            }
-            .addOnFailureListener {
-                agregarServicios("")  //Se dio un error subiendo la nota de audio
-            }
-    } else { //No tiene nota de audio... no se sube...
-        agregarServicios("")
-    }
-}
 
-private fun agregarServicios(rutaImagen: String) {
+private fun agregarServicios() {
 val nombre = binding.etNombre.text.toString()
 val apellido = binding.etApellidoPaterno.text.toString()
 val edad = binding.etEdad.text.toString()
@@ -120,7 +96,7 @@ val servicios = binding.etServicios.text.toString()
 val experiencia = binding.etExperiencia.text.toString()
 val precio = binding.etPrecio.text.toString()
  if (validos(nombre,apellido,edad,telefono,servicios,experiencia,precio)){
-     val rtc= rtcHome("",nombre,apellido,edad,telefono,servicios,experiencia,precio,rutaImagen)
+     val rtc= rtcHome("",nombre,apellido,edad,telefono,servicios,experiencia,precio)
      homeViewModel.addrtc(rtc)
      Toast.makeText(
          requireContext(),

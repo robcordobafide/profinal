@@ -3,6 +3,7 @@ package com.rtc.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.graphics.Color
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -33,6 +34,7 @@ class RtcAdapter: RecyclerView.Adapter<RtcAdapter.HomeViewHolder>() {
 
         //Efectivamente se dibuja la información...
         holder.bind(rtc)
+
     }
 
     override fun getItemCount(): Int {
@@ -55,10 +57,10 @@ class RtcAdapter: RecyclerView.Adapter<RtcAdapter.HomeViewHolder>() {
             itemBinding.tvExperiencia.text = rtc.experiencia
             itemBinding.tvPrecio.text = rtc.precio
             //Mostrar imagen
-            Glide.with(itemBinding.root.context)
-                .load(rtc.rutaImagen)
-                .circleCrop()
-                .into(itemBinding.filaImagen)
+           // Glide.with(itemBinding.root.context)
+                //.load(rtc.rutaImagen)
+                //.circleCrop()
+                //.into(itemBinding.filaImagen)
 
             itemBinding.vistaFila.setOnClickListener {
                 //Genero la acción de pasarse al update con el objeto ...

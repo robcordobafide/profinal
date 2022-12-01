@@ -50,12 +50,12 @@ class VisualizarFragment : Fragment() {
         binding.etPrecioV.setText(args.rtcHome.precio)
 
         //Si hay ruta de imagen... se dibuja la imagen...
-        if (args.rtcHome.rutaImagen?.isNotEmpty() == true) {
-            Glide.with(requireContext())
-                .load(args.rtcHome.rutaImagen)
-                .fitCenter()
-                .into(binding.image)
-        }
+        //if (args.rtcHome.rutaImagen?.isNotEmpty() == true) {
+          //  Glide.with(requireContext())
+            //    .load(args.rtcHome.rutaImagen)
+              //  .fitCenter()
+                //.into(binding.image)
+      //  }
 
         binding.btWhatsapp.setOnClickListener { enviarWhatsapp() }
         binding.btTelefono.setOnClickListener { llamar() }
